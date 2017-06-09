@@ -1,13 +1,3 @@
-# Intersting Points
-
-4 | 7 => 7
-
-4 | 1 => 5
-
-4 | 6 => 6
-
-4 | 3 => 7
-
 # Fixnum
 4 + 'four' => works unlike the book says.
 
