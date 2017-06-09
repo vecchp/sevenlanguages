@@ -5,5 +5,7 @@ puts 'Hello World'
 'Hello, Ruby'.index('Ruby')
 
 # Print name 10 Times
- (0..9).each{|x| puts "Paul"}
- 
+(0..9).each{|x| puts "Paul"}
+
+# Print Sentence from 1 to 10
+(1..10).each{|x| puts "This is sentence number #{x}"}
