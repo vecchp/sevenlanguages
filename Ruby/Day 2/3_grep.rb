@@ -1,30 +1,15 @@
-# Let Tree Class initializer accept a nested structure of hashes
+<<-DOC
+Write a simple grep that will print the lines of a file having
+any occurences of a phrase anywhere in that line.  You need to
+do a simple regular expression match and real lines from a file.
+(This is surprisingly simple in Ruby).  If you want, include
+line numbers. 
+DOC
 
-class Tree
-    attr_accessor :children, :node_name
-
-    def initialize(name, children=[])
-        @children = children
-        @node_name = name
-    end
-
-    def visit_all(&block)
-        visit &block
-        children.each {|c| c.visit_all &block}
-    end
-
-    def visit(&block)
-        block.call self
-    end
+puts "What to grep? "
+input = gets.strip
+File.open('working.txt') do |f|
+    f.each_with_index {|x, i|
+        puts "#{i}: #{x}" unless x.lines.grep(/#{Regexp.quote(input)}/).empty?
+    }
 end
-
-ruby_tree = Tree.new("Ruby", 
-                     [Tree.new("Reia"),
-                      Tree.new("MacRuby")])
-
-puts "Visiting a node"
-ruby_tree.visit {|node| puts node.node_name}
-
-puts "visiting entire tree"
-ruby_tree.visit_all {|node| puts node.node_name}
-
