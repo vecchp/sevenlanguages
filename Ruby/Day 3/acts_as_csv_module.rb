@@ -27,19 +27,19 @@ module ActsAsCsv
         end
 
         def each(&block)
-            block.call(CsvRow.new(self))
+            @csv_contents.each{ |row| block.call(CsvRow.new(@headers, row)) }
         end
     end
 
     class CsvRow
-        def initialize(csv)
-            @headers = csv.headers
-            @contents = csv.csv_contents
+        def initialize(headers, row)
+            @headers = headers
+            @row = row
         end
     
         def method_missing(name, *args)
             position = @headers.index(name.to_s)
-            @contents[position] if position
+            @row[position] if position
         end
     end
 end
