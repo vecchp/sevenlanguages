@@ -1,3 +1,6 @@
+# Docker container
+marcusandre/iolang:latest
+
 # Variable Naming convention
 Car slotNames => list("type")
 
