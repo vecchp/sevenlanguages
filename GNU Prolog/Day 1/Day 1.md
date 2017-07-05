@@ -15,3 +15,18 @@ yes
 This example has one more layer of indirection. In the goals, Prolog unifies X, Y, and Z to lion, tiger, and bear. On the left side, Prolog unifies X, Y, and Z to One, Two, and Three and then reports the result.
 
 The declarative programming model is very appealing. In general, if you can describe the problem, you have solved the problem. In most languages I’ve found myself arguing with the computer at some point saying, “You know what I mean; just do it!” C and C++ compiler errors such as “semicolon expected” are symbolic of this
+
+# What Doesn't seem to be special
+(1 ms) yes
+| ?- genre(What, 'pop').
+
+What = 'Bob Marly' ? a
+
+What = 'Ken Kendra'
+
+yes
+| ?- genre(X, 'pop').
+
+X = 'Bob Marly' ? a
+
+X = 'Ken Kendra'
