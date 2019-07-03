@@ -19,3 +19,9 @@ sum2D := method(a,
 total := sum2D(array)
 
 total println
+
+sumND := method(a,
+    a flatten sum
+)
+
+sumND(array) println
